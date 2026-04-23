@@ -309,7 +309,7 @@ function PricingCTA() {
         <CTAButton />
 
         {/* Payment logos */}
-        <div className="flex justify-center items-center gap-4 mt-5 flex-wrap">
+        <div className="flex justify-center items-center gap-4 mt-10 flex-wrap">
           {[
             { src: "/images/paymments/visa.jpeg", alt: "Visa" },
             { src: "/images/paymments/master.png", alt: "MasterCard" },
@@ -374,9 +374,13 @@ export default function OriginalPage() {
             className="rounded-lg max-w-full h-auto"
           />
         </div>
+        {/* CTA after Para Ti / No Para Ti */}
+        <div className="text-center mt-10">
+          <CTAButton />
+        </div>
 
         {/* Para ti / No para ti */}
-        <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-8 text-left text-sm px-2">
+        <div className="max-w-3xl mt-10 mx-auto grid md:grid-cols-2 gap-8 text-left text-sm px-2">
           <div>
             <h3 className="font-bold text-lg mb-4" style={{ color: "#48bb78" }}>
               Este Ebook Es Para Ti …
@@ -415,10 +419,6 @@ export default function OriginalPage() {
           </div>
         </div>
 
-        {/* CTA after Para Ti / No Para Ti */}
-        <div className="text-center mt-10">
-          <CTAButton />
-        </div>
       </section>
 
       {/* ═══════════════════════════════════════════
@@ -614,47 +614,168 @@ export default function OriginalPage() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          WHATSAPP CONTACT - Light
+          PRICING CARD - Dark
       ═══════════════════════════════════════════ */}
-      <section className="py-12 px-4 text-center" style={{ background: "#fff", color: "#222" }}>
-        <div className="max-w-md mx-auto">
-          <h2 className="text-xl font-bold mb-2 text-[#222]">
-            ¿Tienes preguntas del ebook?
-          </h2>
-          <p className="text-sm text-[#666] mb-6">
-            Dale click al siguiente botón y ponte en contacto con un asesor
-          </p>
-          <a
-            href="https://wa.me/5511999999999"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-3 rounded-lg font-bold text-white text-lg cursor-pointer hover:scale-105 transition-transform shadow-md"
-            style={{ background: "#25d366" }}
+      <section className="py-14 px-4" style={{ background: "#0d0d0d", color: "#fff" }}>
+        <div className="max-w-2xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-black mb-2">
+              Todo lo que vas a recibir
+            </h2>
+            <p className="text-sm" style={{ color: "#999" }}>
+              Por menos de lo que cuesta una cuerda de guitarra
+            </p>
+          </div>
+
+          <div
+            className="rounded-2xl overflow-hidden"
+            style={{ border: "2px solid #e53e3e", boxShadow: "0 0 40px rgba(229,62,62,0.15)" }}
           >
-            <span className="text-2xl">💬</span>
-            Whatsapp
-          </a>
+            {/* Card header */}
+            <div
+              className="p-5 text-center font-black text-lg"
+              style={{ background: "linear-gradient(135deg, #c53030, #e53e3e)" }}
+            >
+              Cancionero de Rock Latino + Todos los Bonos
+            </div>
+
+            <div className="p-8 space-y-6" style={{ background: "#1a1a1a" }}>
+              {/* Items */}
+              <div className="space-y-1">
+                {[
+                  { item: "Cancionero de Rock Latino (100+ canciones)", value: "$24.90" },
+                  { item: "10 Secretos para Tocar Sin Dolor en las Manos", value: "$15.99" },
+                  { item: "30 Errores que te impiden la cejilla perfecta", value: "$12.99" },
+                  { item: "Ejercicios Clave para Mejorar la Digitación", value: "$14.99" },
+                  { item: "Los 50 Acordes más Usados en Guitarra", value: "$9.99" },
+                  { item: "Afina tu Guitarra con 3 Métodos Simples", value: "$2.99" },
+                  { item: "Comunidad VIP en WhatsApp", value: "$29.90" },
+                ].map((line) => (
+                  <div
+                    key={line.item}
+                    className="flex items-center justify-between py-3 border-b"
+                    style={{ borderColor: "#333" }}
+                  >
+                    <span className="flex items-center gap-3 text-sm">
+                      <span style={{ color: "#22c55e" }} className="text-base">✔</span>
+                      {line.item}
+                    </span>
+                    <span className="text-sm line-through ml-4 shrink-0" style={{ color: "#666" }}>
+                      {line.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Pricing */}
+              <div className="text-center space-y-2 py-4">
+                <p style={{ color: "#888" }} className="text-sm">
+                  Valor total:{" "}
+                  <span className="line-through">$111.85 USD</span>
+                </p>
+                <div className="flex items-center justify-center gap-3 flex-wrap">
+                  <span style={{ color: "#888" }} className="text-lg">Hoy por solo</span>
+                  <span
+                    className="font-black text-6xl md:text-7xl animate-[cta-pulse_2s_ease-in-out_infinite]"
+                    style={{ color: "#eab308" }}
+                  >
+                    $11.90
+                  </span>
+                  <span style={{ color: "#888" }} className="text-lg">USD</span>
+                </div>
+                <p className="text-xs" style={{ color: "#777" }}>
+                  Click en el botón para ver el precio en tu moneda local
+                </p>
+              </div>
+
+              {/* CTA + payment */}
+              <div className="text-center space-y-5">
+                <CTAButton />
+                <div className="flex justify-center items-center gap-4 mt-10 flex-wrap">
+                  {[
+                    { src: "/images/paymments/visa.jpeg", alt: "Visa" },
+                    { src: "/images/paymments/master.png", alt: "MasterCard" },
+                    { src: "/images/paymments/american.png", alt: "American Express" },
+                    { src: "/images/paymments/paypal.png", alt: "PayPal" },
+                  ].map((pm) => (
+                    <Image
+                      key={pm.alt}
+                      src={pm.src}
+                      alt={pm.alt}
+                      width={50}
+                      height={32}
+                      className="h-8 w-auto object-contain"
+                    />
+                  ))}
+                </div>
+                <p className="text-[11px] leading-relaxed max-w-sm mx-auto" style={{ color: "#666" }}>
+                  Tendrás acceso al contenido de forma inmediata. El costo final es de $11.90 USD,
+                  podrás utilizar tarjetas de crédito, debito, PayPal, o cualquier medio de pago local.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          TRUST BADGES + GUARANTEE - Light
+          TRUST BADGES + GUARANTEE
       ═══════════════════════════════════════════ */}
-      <section className="py-10 px-4" style={{ background: "#f8f8f8", color: "#222" }}>
-        <div className="max-w-3xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <section className="py-10 px-4" style={{ background: "#0d0d0d", color: "#fff" }}>
+        <div className="max-w-md mx-auto">
+          <div className="flex flex-col gap-4 mb-8">
             {[
-              { icon: "✅", title: "Contenido aprobado" },
-              { icon: "📧", title: "Entrega por E-mail" },
-              { icon: "🔒", title: "Compra segura" },
-              { icon: "🛡️", title: "Privacidad" },
+              {
+                sub: "100% revisado y aprobado",
+                title: "Contenido aprobado",
+                svg: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#c8ff00" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                ),
+              },
+              {
+                sub: "Ambiente seguro y autenticado",
+                title: "Compra segura",
+                svg: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#c8ff00" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                ),
+              },
+              {
+                sub: "Acceso al producto entregado por email",
+                title: "Entrega por E-mail",
+                svg: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#c8ff00" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <polyline points="2,4 12,13 22,4" />
+                  </svg>
+                ),
+              },
+              {
+                sub: "Tu información está 100% segura",
+                title: "Privacidad",
+                svg: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#c8ff00" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+                    <path d="M12 2C8 5 3 5.5 3 5.5S2 17 12 22c10-5 9-16.5 9-16.5S16 5 12 2z" />
+                    <path d="M8 12s1.5 2 4 2 4-2 4-2" />
+                  </svg>
+                ),
+              },
             ].map((badge) => (
               <div
                 key={badge.title}
-                className="text-center p-4 rounded-lg bg-white shadow-sm border border-[#eee]"
+                className="flex items-center gap-5 px-5 py-4 rounded-xl"
+                style={{ background: "#1a1a1a", border: "1px solid #333" }}
               >
-                <p className="text-2xl mb-2">{badge.icon}</p>
-                <p className="text-xs font-bold text-[#22c55e]">{badge.title}</p>
+                <div className="shrink-0 w-12 h-12 rounded-lg flex items-center justify-center" style={{ background: "#111" }}>
+                  {badge.svg}
+                </div>
+                <div className="text-left">
+                  <p className="font-bold text-white text-base leading-tight">{badge.title}</p>
+                  <p className="text-sm mt-0.5" style={{ color: "#c8ff00" }}>{badge.sub}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -670,10 +791,10 @@ export default function OriginalPage() {
             />
           </div>
 
-          <p className="text-center text-sm font-bold mb-3" style={{ color: "#e53e3e" }}>
+          <p className="text-center text-sm font-bold mb-3" style={{ color: "#c8ff00" }}>
             ¡POLÍTICA Y GARANTÍA DE SATISFACCIÓN!
           </p>
-          <p className="text-xs text-[#666] text-center max-w-xl mx-auto leading-relaxed">
+          <p className="text-xs text-center max-w-xl mx-auto leading-relaxed" style={{ color: "#aaa" }}>
             Tienes 7 días a partir de la compra para probar nuestro ebook. Si
             dentro de ese período nuestro ebook no cumple y/o supera tus
             expectativas, vamos a devolver tu dinero SIN hacer preguntas.
@@ -684,7 +805,7 @@ export default function OriginalPage() {
       {/* ═══════════════════════════════════════════
           FOOTER - Dark
       ═══════════════════════════════════════════ */}
-      <footer className="py-5 px-4 text-center" style={{ background: "#111", borderTop: "1px solid #333" }}>
+      <footer className="py-5 px-4 text-center" style={{ background: "#0d0d0d", borderTop: "1px solid #222" }}>
         <p className="text-[10px] text-[#666] leading-relaxed max-w-xl mx-auto">
           Copyright © {new Date().getFullYear()} Tocar Desde Cero Guitarra | Todos los derechos
           reservados. DISCLAIMER: Este sitio no hace parte del sitio web de
