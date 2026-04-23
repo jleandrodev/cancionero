@@ -362,9 +362,6 @@ export default function OriginalPage() {
           TE PRESENTO ESTE CANCIONERO IDEAL PARA PRACTICAR VIENDO COMO
           CONSTRUIR ACORDES EN TU GUITARRA
         </p>
-        <div className="text-center mt-10">
-          <CTAButton />
-        </div>
 
         {/* Ebook cover */}
         <div className="flex justify-center mt-8 mb-10">
